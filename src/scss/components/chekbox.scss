@@ -1,0 +1,42 @@
+.checkbox-list{
+  font-size: 13px;
+  color: $color-blue--d1;
+
+  > li{
+    display: inline-block;
+    margin-top: 20px;
+    vertical-align: top;
+    width: 180px;
+  }
+
+  label{
+    position: relative;
+    z-index: 1;
+
+    .icon-checkbox{
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      @extend .sp-basic-checkbox;
+    }
+  }
+
+  input[type="checkbox"] {
+    position: relative;
+    z-index: 2;
+    margin-right: 10px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    width: 20px;
+    height: 20px;
+    outline: 0;
+    opacity: 0;
+
+    &:checked + .icon-checkbox{
+      @extend .sp-basic-checkbox-check;
+    }
+  }
+}

@@ -1,0 +1,164 @@
+﻿doctype html
+html(lang='')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='x-ua-compatible', content='ie=edge')
+        title Узнайте историю каждого солнцефрукта
+        meta(name='description', content='')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        script(type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false")
+        link(rel='stylesheet', href='css/index.css')
+        style(type="text/css").
+            #preloader {
+                position: fixed;
+                z-index: 9999;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                background: #fff;
+            }
+    body
+        #preloader
+        #wrapper
+            include include/header.pug
+            .body-container
+                .body-container__left
+                    .filter-type.clearfix
+                        .panel-default.panel-default--no-border.panel-default--left
+                            .panel-heading
+                                h4.panel-title
+                                    a(href="#collapseAmenities", data-toggle="collapse").panel-title__link.panel-title__link--no-border Amenities
+                        #collapseAmenities.panel-collapse.collapse.in.panel-collapse--right
+                            .filter-search
+                                h4.filter-search__title Amenities search
+                                .filter-search__control
+                                    .icon-search
+                                    ul.default-list.js-filter-search__list-tags.filter-tags-list.filter-tags-list--inline
+                                    input(type="text", placeholder="enter the names of amenities that you need in apartment")#filter-input.filter-search__input.js-filter-search__input
+                                    ul#filter-search-list.default-list.filter-search__list.js-filter-search__list
+                            .panel-default
+                                .panel-heading
+                                    h4.panel-title
+                                        a(href="#collapseOne", data-toggle="collapse").panel-title__link Popular amenities
+                                #collapseOne.panel-collapse.collapse.in
+                                    .panel-body
+                                        .filter-item
+                                            ul.default-list.checkbox-list
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Air conditioner").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Air conditioner
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Computer").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Computer
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Elevator").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Elevator
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Free Transportation").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Free Transportation
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Free wireless internet").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Free wireless internet
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Guarded parking").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Guarded parking
+                            .panel-default
+                                .panel-heading
+                                    h4.panel-title
+                                        a(href="#collapseTwo", data-toggle="collapse").panel-title__link Apartment
+                                #collapseTwo.panel-collapse.collapse.in
+                                    .panel-body
+                                        .filter-item
+                                            ul.default-list.checkbox-list
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Balcony").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Balcony
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Fireplace").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Fireplace
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Floor heating").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Floor heating
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Game room").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Game room
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Terrace").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Terrace
+                            .panel-default
+                                .panel-heading
+                                    h4.panel-title
+                                        a(href="#collapseThree", data-toggle="collapse").panel-title__link Kitchen
+                                #collapseThree.panel-collapse.collapse.in
+                                    .panel-body
+                                        .filter-item
+                                            ul.default-list.checkbox-list
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Blender").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Blender
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Coffee maker").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Coffee maker
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Cooking hob").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Cooking hob
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Dishwasher").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Dishwasher
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Freezer").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Freezer
+                                                li
+                                                    label
+                                                        input(type="checkbox" value="Fridge").checkbox-filter.js-checkbox-filter
+                                                        .icon-checkbox
+                                                        | Fridge
+                .body-container__right
+                    ul.nav.nav-tabs
+                        li
+                            a(href="#apartments-map", data-toggle="tab" ) Map
+                        li.active
+                            a(href="#apartments-row", data-toggle="tab") Accommodations
+                    .filter-tags
+                        ul.default-list.filter-tags-list.js-filter-tags
+                        .filter-apartments__count.js-apartments__count
+                    .tab-content
+                        #apartments-map.tab-pane.fade
+                            #map
+                        #apartments-row.tab-pane.active.fade.in
+                            ul.apartments-list.default-list
+        script(src='js/vendor/jquery-3.1.0.min.js')
+        script(src='js/index.js')

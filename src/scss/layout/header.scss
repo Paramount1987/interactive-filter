@@ -1,0 +1,21 @@
+header{
+  position: relative;
+  z-index: 10;
+  padding: 12px 25px;
+  box-shadow: 0 0 9px 0 rgba(0,0,0,0.15);
+}
+
+.header-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo{
+  display: block;
+  text-decoration: none;
+}
+
+.header-logo__img{
+  width: 120px;
+  height: 32px;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Узнайте историю каждого солнцефрукта</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3&amp;amp;sensor=false"></script>
+        <link rel="stylesheet" href="css/index.css">
+        <style type="text/css">
+            #preloader {
+                position: fixed;
+                z-index: 9999;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                background: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="preloader"></div>
+        <div id="wrapper">
+            <header>
+                <div class="header-container">
+                    <div class="header-container__left"><a class="header-logo" href="#"><img class="header-logo__img" src="img/logo.png"></a></div>
+                    <div class="header-container__right"><a class="btn btn-orange" href="#">List your property</a></div>
+                </div>
+            </header>
+            <div class="body-container">
+                <div class="body-container__left">
+                    <div class="filter-type clearfix">
+                        <div class="panel-default panel-default--no-border panel-default--left">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a class="panel-title__link panel-title__link--no-border" href="#collapseAmenities" data-toggle="collapse">Amenities</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel-collapse collapse in panel-collapse--right" id="collapseAmenities">
+                            <div class="filter-search">
+                                <h4 class="filter-search__title">Amenities search</h4>
+                                <div class="filter-search__control">
+                                    <div class="icon-search"></div>
+                                    <ul class="default-list js-filter-search__list-tags filter-tags-list filter-tags-list--inline"></ul>
+                                    <input class="filter-search__input js-filter-search__input" type="text" placeholder="enter the names of amenities that you need in apartment" id="filter-input">
+                                    <ul class="default-list filter-search__list js-filter-search__list" id="filter-search-list"></ul>
+                                </div>
+                            </div>
+                            <div class="panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a class="panel-title__link" href="#collapseOne" data-toggle="collapse">Popular amenities</a></h4>
+                                </div>
+                                <div class="panel-collapse collapse in" id="collapseOne">
+                                    <div class="panel-body">
+                                        <div class="filter-item">
+                                            <ul class="default-list checkbox-list">
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Air conditioner">
+                                                        <div class="icon-checkbox"></div>Air conditioner
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Computer">
+                                                        <div class="icon-checkbox"></div>Computer
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Elevator">
+                                                        <div class="icon-checkbox"></div>Elevator
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Free Transportation">
+                                                        <div class="icon-checkbox"></div>Free Transportation
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Free wireless internet">
+                                                        <div class="icon-checkbox"></div>Free wireless internet
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Guarded parking">
+                                                        <div class="icon-checkbox"></div>Guarded parking
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a class="panel-title__link" href="#collapseTwo" data-toggle="collapse">Apartment</a></h4>
+                                </div>
+                                <div class="panel-collapse collapse in" id="collapseTwo">
+                                    <div class="panel-body">
+                                        <div class="filter-item">
+                                            <ul class="default-list checkbox-list">
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Balcony">
+                                                        <div class="icon-checkbox"></div>Balcony
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Fireplace">
+                                                        <div class="icon-checkbox"></div>Fireplace
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Floor heating">
+                                                        <div class="icon-checkbox"></div>Floor heating
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Game room">
+                                                        <div class="icon-checkbox"></div>Game room
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Terrace">
+                                                        <div class="icon-checkbox"></div>Terrace
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a class="panel-title__link" href="#collapseThree" data-toggle="collapse">Kitchen</a></h4>
+                                </div>
+                                <div class="panel-collapse collapse in" id="collapseThree">
+                                    <div class="panel-body">
+                                        <div class="filter-item">
+                                            <ul class="default-list checkbox-list">
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Blender">
+                                                        <div class="icon-checkbox"></div>Blender
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Coffee maker">
+                                                        <div class="icon-checkbox"></div>Coffee maker
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Cooking hob">
+                                                        <div class="icon-checkbox"></div>Cooking hob
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Dishwasher">
+                                                        <div class="icon-checkbox"></div>Dishwasher
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Freezer">
+                                                        <div class="icon-checkbox"></div>Freezer
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input class="checkbox-filter js-checkbox-filter" type="checkbox" value="Fridge">
+                                                        <div class="icon-checkbox"></div>Fridge
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-container__right">
+                    <ul class="nav nav-tabs">
+                        <li><a href="#apartments-map" data-toggle="tab">Map</a></li>
+                        <li class="active"><a href="#apartments-row" data-toggle="tab">Accommodations</a></li>
+                    </ul>
+                    <div class="filter-tags">
+                        <ul class="default-list filter-tags-list js-filter-tags"></ul>
+                        <div class="filter-apartments__count js-apartments__count"></div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="apartments-map">
+                            <div id="map"></div>
+                        </div>
+                        <div class="tab-pane active fade in" id="apartments-row">
+                            <ul class="apartments-list default-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/vendor/jquery-3.1.0.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
